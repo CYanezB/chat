@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+
+
+body {
+  background-color: #78e08f;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.header {
+  height: 8em;
+  padding-top: 1.5em;
+  background: #78e08f;
+  background: -moz-linear-gradient(top, #78e08f 0%, #78e08f 76%, #60a3bc 100%);
+  background: -webkit-linear-gradient(top, #78e08f 0%, #78e08f 76%, #60a3bc 100%);
+  background: linear-gradient(to bottom, #78e08f 0%, #78e08f 76%, #60a3bc 100%);
+  text-align: center;
+}
+
+h1 {
+  color: transparent;
+  background: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+  font-size: 4em;
+  margin-top: 0em;
+  padding-top: 0em;
+}
+
+.container {
+  background: #78e08f;
+  background: -moz-linear-gradient(top, #78e08f 0%, #60a3bc 7%, #60a3bc 100%);
+  background: -webkit-linear-gradient(top, #78e08f 0%, #60a3bc 7%, #60a3bc 100%);
+  background: #60a3bc;
+  background: -moz-linear-gradient(top, #60a3bc 0%, #60a3bc 91%, #78e08f 100%);
+  background: -webkit-linear-gradient(top, #60a3bc 0%, #60a3bc 91%, #78e08f 100%);
+  background: linear-gradient(to bottom, #60a3bc 0%, #60a3bc 91%, #78e08f 100%);
+  height: 80vh;
+  overflow: scroll;
+}
+
+span.® {
+  font-size: 0.5em;
+}
+
+#mensajes {
+
+  margin: 2em;
+  margin-top: 0em;
+  list-style: none;
+  padding: 2em;
+}
+
+#mensajes li {
+  margin: 2em;
+  font-size: 1.5em;
+  background-color: #78e08f;
+  width: fit-content;
+  padding: 0.5em;
+  border-radius: 15px;
+  color: #3c6382;
+  -webkit-box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.67);
+  box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.67);
+}
+
+label {
+  font-size: 1.5em;
+
+}
+
+
+.footer {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em;
+}
+
+div.inputs input {
+  height: 2.5em;
+}
+
+#btnEnviar {
+  color: rgb(74, 105, 189);
+  font-size: 26px;
+  line-height: 26px;
+  padding: 6px;
+  border-radius: 10px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(135deg, rgb(130, 204, 221) 0%, rgb(184, 233, 148) 82%, rgb(120, 224, 143) 100%);
+  box-shadow: rgba(0, 0, 0, 0.67) 5px 5px 15px 4px;
+  border: 2px groove rgba(60, 99, 130, 0.95);
+  display: inline-block;
+  cursor: pointer;
+}
+
+#btnEnviar:hover {
+  background: #82CCDD;
+}
+
+#btnEnviar:active {
+  background: #78E08F;
+}

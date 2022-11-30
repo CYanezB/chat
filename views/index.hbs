@@ -1,0 +1,71 @@
+<div class="header">
+    <h1 class="animate__animated animate__pulse animate__infinite">GUASA <span class="®">®</span></h1>
+    <h4 id="clientesConectados">Clientes conectados: 0</h4>
+</div>
+<div class="container" id="main">
+    <ul id="mensajes">
+    </ul>
+</div>
+<div class="footer">
+    <div class="inputs">
+        <label>Nombre:</label>
+        <input type="text" name="Nombre" id="inputNombre">
+    </div>
+    <div class="inputs">
+        <label>Mensaje:</label>
+        <input type="text" name="Mensaje" id="inputMensaje">
+    </div>
+    <input type="submit" id="btnEnviar" value="Enviar">
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    // Código JS de la parte cliente
+
+    // Conectamos con el servidor de websocket
+    const socket = io();
+
+    const nombre = document.getElementById("inputNombre");
+    const mensaje = document.getElementById("inputMensaje");
+    const btnEnviar = document.getElementById("btnEnviar");
+    const mensajes = document.getElementById('mensajes');
+    const clientesConectados = document.getElementById('clientesConectados')
+    const conversacion = document.getElementById("main");
+
+    btnEnviar.addEventListener('click', () => {
+        let data = {
+            nombre: nombre.value,
+            mensaje: mensaje.value
+        }
+        socket.emit('mensaje_chat', data);
+    });
+
+    socket.on('mensaje_chat', (data) => {
+        console.log(data);
+        // Generar un li con los datos de nombre y mensajes
+        const li = document.createElement('li')
+        li.innerText = `${data.nombre}: ${data.mensaje}`;
+        li.classList.add('animate__animated');
+        li.classList.add('animate__lightSpeedInRight');
+        // Agregar ese LI al UL de mensajes
+        mensajes.append(li)
+
+        conversacion.scrollTop = conversacion.scrollHeight;
+        // createElement y append
+    });
+
+    socket.on('clientes_chat', (data) => {
+        // data es el número de clientes conectados
+        clientesConectados.innerText = `Clientes conectados: ${data}`
+        // Modificar el H4 para que aparezcan los clientes conectados
+
+    });
+
+
+
+
+
+
+
+
+</script>
